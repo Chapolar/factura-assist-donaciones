@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apoya Factura Assist ☕</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            max-width: 600px;
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+            animation: slideIn 0.6s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1976d2 0%, #1565c0 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .header .icon {
+            font-size: 60px;
+            margin-bottom: 15px;
+        }
+
+        .header p {
+            font-size: 18px;
+            opacity: 0.95;
+            line-height: 1.6;
+        }
+
+        .content {
+            padding: 40px 30px;
+        }
+
+        .thank-you {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 35px;
+            box-shadow: 0 5px 15px rgba(245, 87, 108, 0.3);
+        }
+
+        .thank-you h2 {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .thank-you p {
+            font-size: 15px;
+            opacity: 0.95;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title span {
+            font-size: 24px;
+        }
+
+        .payment-option {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border: 2px solid #e9ecef;
+            transition: all 0.3s;
+        }
+
+        .payment-option:hover {
+            border-color: #1976d2;
+            box-shadow: 0 5px 15px rgba(25, 118, 210, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .paypal-btn {
+            display: inline-block;
+            background: #0070ba;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 12px rgba(0, 112, 186, 0.3);
+        }
+
+        .paypal-btn:hover {
+            background: #005a94;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 112, 186, 0.4);
+        }
+
+        .qr-container {
+            text-align: center;
+        }
+
+        .qr-placeholder {
+            width: 250px;
+            height: 250px;
+            margin: 20px auto;
+            background: white;
+            border: 3px solid #1976d2;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: #666;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .qr-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .bank-info {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+            margin-top: 15px;
+        }
+
+        .bank-info p {
+            font-size: 14px;
+            color: #495057;
+            margin-bottom: 8px;
+        }
+
+        .bank-info strong {
+            color: #1976d2;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 25px;
+            background: #f8f9fa;
+            color: #6c757d;
+            font-size: 14px;
+        }
+
+        .footer p {
+            margin-bottom: 5px;
+        }
+
+        .divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, #dee2e6, transparent);
+            margin: 30px 0;
+        }
+
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 26px;
+            }
+            
+            .header p {
+                font-size: 16px;
+            }
+
+            .content {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="icon">🧾</div>
+            <h1>Factura Assist</h1>
+            <p>Tu asistente inteligente para facturación</p>
+        </div>
+
+        <div class="content">
+            <div class="thank-you">
+                <h2>¡Gracias por descargar y usar Factura Assist! 🎉</h2>
+                <p>Tu apoyo hace posible que siga mejorando esta herramienta</p>
+            </div>
+
+            <div class="section">
+                <div class="section-title">
+                    <span>💳</span>
+                    <span>PayPal / Tarjeta</span>
+                </div>
+                <div class="payment-option">
+                    <p style="margin-bottom: 15px; color: #495057;">
+                        Puedes apoyarme con cualquier monto usando PayPal:
+                    </p>
+                    <a href="https://paypal.me/fjmh57" class="paypal-btn" target="_blank">
+                        💙 Donar con PayPal
+                    </a>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="section">
+                <div class="section-title">
+                    <span>📱</span>
+                    <span>Transferencia Bancaria (El Salvador)</span>
+                </div>
+                <div class="payment-option">
+                    <div class="qr-container">
+                        <p style="margin-bottom: 15px; color: #495057;">
+                            Escanea el código QR con tu app bancaria:
+                        </p>
+                        
+                        <!-- OPCIÓN 1: Si tienes imagen del QR -->
+                        <!-- <img src="tu-qr.png" alt="QR de pago" class="qr-image"> -->
+                        
+                        <!-- OPCIÓN 2: Placeholder mientras subes tu QR -->
+                        <div class="qr-placeholder">
+                            📷 Aquí va tu código QR<br>
+                            <small>(Sube tu imagen QR aquí)</small>
+                        </div>
+
+                        <div class="bank-info">
+                            <p><strong>Banco:</strong> [Tu banco aquí]</p>
+                            <p><strong>Cuenta:</strong> [Tu número de cuenta]</p>
+                            <p><strong>Nombre:</strong> [Tu nombre]</p>
+                            <p><strong>Tipo:</strong> Cuenta [Ahorro/Corriente]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 30px; padding: 20px; background: #e3f2fd; border-radius: 10px;">
+                <p style="color: #1976d2; font-size: 15px; line-height: 1.6;">
+                    💙 Cualquier aporte es muy valorado y me ayuda a seguir desarrollando herramientas útiles para la comunidad
+                </p>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="section">
+                <div class="section-title">
+                    <span>💬</span>
+                    <span>Sugerencias e Ideas</span>
+                </div>
+                <div class="payment-option" style="text-align: center;">
+                    <p style="margin-bottom: 20px; color: #495057; line-height: 1.6;">
+                        ¿Tienes alguna idea para mejorar Factura Assist?<br>
+                        ¡Me encantaría escucharla!
+                    </p>
+                    <a href="TU_LINK_DE_GOOGLE_FORM_AQUI" class="paypal-btn" target="_blank" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);">
+                        💡 Enviar Sugerencia
+                    </a>
+                    <p style="margin-top: 15px; font-size: 13px; color: #6c757d;">
+                        Solo tomará 30 segundos y es anónimo si prefieres
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><strong>Factura Assist v1.4</strong></p>
+            <p>Desarrollado con ❤️ en El Salvador</p>
+            <p style="margin-top: 10px; font-size: 12px;">© 2025 - FjMh1206</p>
+        </div>
+    </div>
+</body>
+</html>
